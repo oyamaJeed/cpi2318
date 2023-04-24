@@ -1,7 +1,6 @@
 TARGET := test2
 SUB := display.c
 SRC := $(TARGET).c
-SOBJ := lib$(TARGET).so
 
 
 CFLAGS := -g -Wall 
@@ -12,9 +11,9 @@ all : $(TARGET)
 
 
 $(TARGET): $(SRC) $(SUB)
-	$(CC) -shared $(SUB) -fPIC -o $(SOBJ)
-	$(CC) -o $@ $(SRC) -L. -l$(TARGET)
+	$(CC) -shared $(SUB) -fPIC -o libdlink.so
+	$(CC) -o $@ $(SRC) -L. -ldlink
 
 clean:
-	rm -f $(SOBJ) $(TARGET) 
+	rm -f libdlink.so $(TARGET) 
 	
