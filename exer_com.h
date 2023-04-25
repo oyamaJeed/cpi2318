@@ -12,6 +12,16 @@ struct st_exer {
 };
 typedef struct st_exer ST_EXER;
 
+struct st_ary {
+	char c_ary[32];
+};
+typedef struct st_ary ST_ARY;
+
+union uni_exer {
+	ST_ARY sary;
+	ST_EXER exer;
+};
+typedef union uni_exer UNI_EXER;
 
 
 #endif
